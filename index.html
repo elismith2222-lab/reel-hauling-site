@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reel Hauling LLC — Heavy Hauling & Lowboy Transport | Denver, NC</title>
+<meta name="description" content="Family-owned heavy hauling in Denver, NC. Lowboy & dump trailer transport for construction equipment, excavators, forklifts, and oversized loads across the Southeast. Get a free quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Deep steel-blue base = trust/reliability (top color for transport).
+       Charcoal = rugged/industrial. Safety-yellow = energy + CTA pop. */
+    --black:#0f1822;        /* deep navy-charcoal base */
+    --charcoal:#16222e;     /* steel blue panel */
+    --charcoal-2:#1d2b39;   /* lighter steel panel */
+    --amber:#ffc12b;        /* safety / CAT yellow accent */
+    --amber-deep:#e8a200;   /* deeper yellow for gradients */
+    --steel:#9fb0c0;        /* muted blue-gray text */
+    --bone:#f4f6f8;         /* clean off-white */
+    --line:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',sans-serif;
+    background:var(--black);
+    color:var(--bone);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ---- Top Bar ---- */
+  .topbar{background:var(--amber);color:var(--black);font-weight:600;font-size:.85rem}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 24px;flex-wrap:wrap;gap:6px}
+  .topbar a{font-weight:700}
+  .topbar .creds{letter-spacing:.05em}
+
+  /* ---- Nav ---- */
+  header{position:sticky;top:0;z-index:50;background:rgba(13,13,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1200px;margin:0 auto}
+  .logo{font-family:'Oswald';font-weight:700;font-size:1.4rem;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+  .logo .mark{width:34px;height:34px;background:var(--amber);color:var(--black);display:grid;place-items:center;font-weight:700;border-radius:4px;font-size:1.1rem;transform:skewX(-8deg)}
+  .logo span{color:var(--amber)}
+  .navlinks{display:flex;gap:28px;align-items:center;font-family:'Oswald';text-transform:uppercase;font-size:.92rem;letter-spacing:.04em}
+  .navlinks a{color:var(--steel);transition:color .2s}
+  .navlinks a:hover{color:var(--bone)}
+  .nav-cta{background:var(--amber);color:var(--black)!important;padding:10px 18px;border-radius:4px;font-weight:600;transform:skewX(-8deg)}
+  .nav-cta span{display:inline-block;transform:skewX(8deg)}
+  .nav-cta:hover{background:var(--bone)}
+  .menu-btn{display:none;background:none;border:none;color:var(--bone);font-size:1.6rem;cursor:pointer}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+  .hero-img{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(15,24,34,.55) 0%,rgba(15,24,34,.40) 40%,rgba(15,24,34,.94) 100%),
+      repeating-linear-gradient(115deg,#13202c 0 60px,#1a2935 60px 120px);
+    display:grid;place-items:center;
+  }
+  .hero-placeholder{position:absolute;text-align:center;color:rgba(255,255,255,.18);font-family:'Oswald';font-size:1rem;letter-spacing:.1em;border:2px dashed rgba(255,255,255,.15);padding:24px 30px;border-radius:8px}
+  .hero-content{position:relative;z-index:2;max-width:760px}
+  .eyebrow{display:inline-block;background:var(--amber);color:var(--black);font-family:'Oswald';font-weight:600;font-size:.85rem;letter-spacing:.12em;padding:6px 14px;margin-bottom:22px;transform:skewX(-8deg)}
+  .eyebrow span{display:inline-block;transform:skewX(8deg)}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:700}
+  .hero h1 .amber{color:var(--amber)}
+  .hero p.sub{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--steel);margin:22px 0 34px;max-width:560px;font-weight:500}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{font-family:'Oswald';text-transform:uppercase;letter-spacing:.04em;font-weight:600;padding:16px 30px;border-radius:4px;font-size:1.05rem;cursor:pointer;border:none;transition:transform .15s,background .2s;display:inline-flex;align-items:center;gap:10px}
+  .btn-primary{background:var(--amber);color:var(--black)}
+  .btn-primary:hover{background:var(--bone);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--bone);border:2px solid rgba(255,255,255,.25)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  /* ---- Trust strip ---- */
+  .trust{background:var(--amber);color:var(--black)}
+  .trust .wrap{display:flex;justify-content:space-around;align-items:center;padding:18px 24px;flex-wrap:wrap;gap:18px;text-align:center}
+  .trust .item{font-family:'Oswald';text-transform:uppercase}
+  .trust .item b{display:block;font-size:1.3rem;font-weight:700;letter-spacing:.03em}
+  .trust .item small{font-size:.78rem;font-weight:500;opacity:.75;letter-spacing:.08em}
+  .trust .divider{width:1px;height:38px;background:rgba(0,0,0,.2)}
+
+  /* ---- Sections ---- */
+  section.block{padding:90px 0}
+  .section-tag{font-family:'Oswald';color:var(--amber);font-weight:600;letter-spacing:.14em;font-size:.9rem;margin-bottom:12px}
+  h2.section-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:700;margin-bottom:20px}
+
+  /* About */
+  .about{background:var(--charcoal)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .about p{color:var(--steel);font-size:1.1rem;margin-bottom:18px}
+  .about p strong{color:var(--bone)}
+  .about-photo{background:repeating-linear-gradient(115deg,#13202c 0 40px,#1a2935 40px 80px);border-radius:10px;min-height:340px;display:grid;place-items:center;color:rgba(255,255,255,.18);font-family:'Oswald';letter-spacing:.1em;border:2px dashed rgba(255,255,255,.12);text-align:center;padding:20px}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+  .svc-card{background:var(--charcoal);border:1px solid var(--line);border-radius:10px;padding:32px 26px;transition:transform .2s,border-color .2s}
+  .svc-card:hover{transform:translateY(-4px);border-color:var(--amber)}
+  .svc-card .ico{width:52px;height:52px;background:var(--amber);border-radius:8px;display:grid;place-items:center;margin-bottom:18px}
+  .svc-card .ico svg{width:28px;height:28px;stroke:var(--black);fill:none;stroke-width:2}
+  .svc-card h3{font-size:1.3rem;font-weight:600;margin-bottom:10px}
+  .svc-card p{color:var(--steel);font-size:.98rem}
+
+  /* Gallery */
+  .gallery{background:var(--charcoal)}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+  .gal-item{aspect-ratio:4/3;background:repeating-linear-gradient(115deg,#13202c 0 30px,#1a2935 30px 60px);border-radius:8px;position:relative;overflow:hidden;display:grid;place-items:end;border:1px solid var(--line)}
+  .gal-item .cap{width:100%;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:30px 16px 14px;font-family:'Oswald';text-transform:uppercase;font-size:.92rem;letter-spacing:.04em}
+  .gal-note{text-align:center;margin-top:28px;color:var(--steel);font-size:.95rem}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(120deg,var(--amber),var(--amber-deep));color:var(--black);text-align:center;padding:70px 24px}
+  .cta-band h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:14px}
+  .cta-band p{font-weight:600;margin-bottom:28px;font-size:1.1rem}
+  .cta-band .btn-dark{background:var(--black);color:var(--bone)}
+  .cta-band .btn-dark:hover{background:var(--charcoal);transform:translateY(-2px)}
+
+  /* Testimonials */
+  .testi{text-align:center}
+  .testi-box{background:var(--charcoal);border:1px solid var(--line);border-radius:12px;padding:50px 40px;max-width:760px;margin:30px auto 0}
+  .testi-box .quote-mark{font-family:'Oswald';font-size:3rem;color:var(--amber);line-height:1}
+  .testi-box p{color:var(--steel);font-style:italic;font-size:1.05rem;margin:10px 0}
+  .stars{color:var(--amber);letter-spacing:4px;font-size:1.2rem}
+
+  /* Footer */
+  footer{background:#0a121a;padding:60px 0 30px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  footer h4{font-family:'Oswald';font-size:1.1rem;letter-spacing:.06em;margin-bottom:16px;color:var(--bone)}
+  footer p,footer a{color:var(--steel);font-size:.95rem;display:block;margin-bottom:8px;transition:color .2s}
+  footer a:hover{color:var(--amber)}
+  .foot-logo{font-family:'Oswald';font-weight:700;font-size:1.5rem;letter-spacing:.06em;margin-bottom:14px}
+  .foot-logo span{color:var(--amber)}
+  .foot-creds{font-family:'Oswald';letter-spacing:.06em;color:var(--steel);font-size:.85rem;margin-top:10px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:24px;text-align:center;color:var(--steel);font-size:.85rem}
+
+  @media(max-width:880px){
+    .navlinks{display:none}
+    .menu-btn{display:block}
+    .about-grid{grid-template-columns:1fr;gap:34px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .gal-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .trust .divider{display:none}
+  }
+  @media(max-width:520px){
+    .svc-grid,.gal-grid{grid-template-columns:1fr}
+    .hero{min-height:78vh}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="creds">DOT# 4400046 &nbsp;|&nbsp; MC# 1727073</span>
+    <span>📞 <a href="tel:+17042016202">(704) 201-6202</a> &nbsp;•&nbsp; <a href="mailto:reelhauling.llc@gmail.com">reelhauling.llc@gmail.com</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#" class="logo"><span class="mark">R</span>REEL <span>HAULING</span></a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Past Hauls</a>
+      <a href="#about">About</a>
+      <a href="#" >FAQ</a>
+      <a href="#" >Contact</a>
+      <a href="#quote" class="nav-cta"><span>Get a Quote</span></a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <div class="hero-placeholder">[ HERO PHOTO GOES HERE ]<br>Black Kenworth + loaded lowboy</div>
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow"><span>Family Owned • Denver, NC</span></span>
+      <h1>We Haul What <span class="amber">Others Won't.</span></h1>
+      <p class="sub">Heavy equipment, oversized loads, and dump trailer hauling across the Southeast. Lowboy &amp; dump C&amp;D trailer. One call, any load.</p>
+      <div class="btn-row">
+        <a href="#quote" class="btn btn-primary">Get a Free Quote →</a>
+        <a href="tel:+17042016202" class="btn btn-ghost">📞 (704) 201-6202</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><b>$1M / $2M</b><small>Liability + Cargo Insured</small></div>
+    <div class="divider"></div>
+    <div class="item"><b>Southeast US</b><small>Based in Denver, NC</small></div>
+    <div class="divider"></div>
+    <div class="item"><b>DOT &amp; MC</b><small>Fully Licensed</small></div>
+    <div class="divider"></div>
+    <div class="item"><b>Family Owned</b><small>Since 2025</small></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">WHO WE ARE</div>
+        <h2 class="section-title">A Family Business Built on Hard Work</h2>
+        <p>Reel Hauling LLC is a <strong>family-owned and operated</strong> heavy hauling company out of Denver, North Carolina. We started in 2025 with one goal: move heavy loads safely, on time, and treat every customer like a neighbor.</p>
+        <p>From excavators and bulldozers to forklifts, graders, and oversized loads, we specialize in <strong>lowboy and dump C&amp;D trailer transport</strong>. When you call Reel Hauling, you're talking to the people who actually drive the truck — not a call center.</p>
+        <p>We're fully licensed, fully insured, and ready to roll across the Southeast.</p>
+        <a href="#" class="btn btn-ghost" style="margin-top:10px">Read Our Story</a>
+      </div>
+      <div class="about-photo">[ FAMILY / TRUCK PHOTO ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto">
+      <div class="section-tag">WHAT WE HAUL</div>
+      <h2 class="section-title">Heavy Duty Ready</h2>
+      <p style="color:var(--steel);font-size:1.1rem">If it's heavy, oversized, or hard to move — we've got the equipment for it.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17h13v-5l4 1v4h1M3 17V7h10v10M3 17a2 2 0 104 0M16 17a2 2 0 104 0"/></svg></div>
+        <h3>Construction Equipment</h3>
+        <p>Excavators, bulldozers, graders, and heavy machinery hauled on our lowboy trailer.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 16V5h9v11M4 16h12M4 16a2 2 0 104 0M13 9h4l3 4v3h-2M16 16a2 2 0 104 0"/></svg></div>
+        <h3>Forklifts &amp; Material Handlers</h3>
+        <p>Safe, secure transport for forklifts and industrial material-handling equipment.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 16V8h12v8M3 16h14M3 16a2 2 0 104 0M14 16a2 2 0 104 0M15 11h3l3 3M2 8l6-4 7 4"/></svg></div>
+        <h3>Oversized &amp; Wide Loads</h3>
+        <p>Permitted oversized hauling. (We skip escort-required loads to keep your costs down.)</p>
+      </div>
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 16V9l3-3h7v10M3 16h13M3 16a2 2 0 104 0M13 16a2 2 0 104 0M13 9h5v7"/></svg></div>
+        <h3>Dump Trailer Loads</h3>
+        <p>C&amp;D material, gravel, and aggregate moved with our dump C&amp;D trailer.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Fully Insured</h3>
+        <p>~$1M liability + ~$2M cargo coverage. Your equipment is protected on every mile.</p>
+      </div>
+      <div class="svc-card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Southeast Coverage</h3>
+        <p>Based in Denver, NC, serving the Southeast — and we'll travel further for the right load.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="block gallery" id="gallery">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto">
+      <div class="section-tag">PAST HAULS</div>
+      <h2 class="section-title">Proof in Every Load</h2>
+      <p style="color:var(--steel);font-size:1.1rem">A look at what we've moved. Real trucks, real equipment, real work.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><div class="cap">Sennebogen Material Handler</div></div>
+      <div class="gal-item"><div class="cap">Forklift Transport</div></div>
+      <div class="gal-item"><div class="cap">Bulldozer on Lowboy</div></div>
+      <div class="gal-item"><div class="cap">Dump C&amp;D Trailer</div></div>
+      <div class="gal-item"><div class="cap">Skidder / Forestry Equip.</div></div>
+      <div class="gal-item"><div class="cap">Oversized Wide Load</div></div>
+    </div>
+    <p class="gal-note">📷 Photos update automatically from the owner's Google Photos album — easy to add new hauls from a phone.</p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="quote">
+  <div class="wrap">
+    <h2>Got a Load? Let's Move It.</h2>
+    <p>Tell us what you need hauled and we'll get back to you within 24 hours.</p>
+    <a href="#" class="btn btn-dark">Request a Free Quote →</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="block testi">
+  <div class="wrap">
+    <div class="section-tag">WHAT CUSTOMERS SAY</div>
+    <h2 class="section-title">Trusted on the Road</h2>
+    <div class="testi-box">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p>Your first reviews will appear here. Early reviews carry a lot of weight — ask every happy customer to leave one on Google!</p>
+      <strong style="font-family:'Oswald';letter-spacing:.04em">— Future Happy Customer</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">REEL <span>HAULING</span> LLC</div>
+        <p>Family-owned heavy hauling &amp; lowboy transport based in Denver, NC. Serving the Southeast, one load at a time.</p>
+        <div class="foot-creds">DOT# 4400046 &nbsp;|&nbsp; MC# 1727073</div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+17042016202">📞 (704) 201-6202</a>
+        <a href="mailto:reelhauling.llc@gmail.com">✉️ reelhauling.llc@gmail.com</a>
+        <p>📍 1949 Beth Haven Ch Rd<br>Denver, NC 28037</p>
+        <a href="#">📘 Facebook</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#gallery">Past Hauls</a>
+        <a href="#about">About Us</a>
+        <a href="#">FAQ</a>
+        <a href="#quote">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2025 Reel Hauling LLC. All rights reserved. &nbsp;•&nbsp; Denver, NC &nbsp;•&nbsp; Family Owned &amp; Operated
+    </div>
+  </div>
+</footer>
+
+<script>
+  // simple mobile menu toggle (placeholder for full nav)
+  document.querySelector('.menu-btn').addEventListener('click',function(){
+    var links=document.querySelector('.navlinks');
+    if(links.style.display==='flex'){links.style.display='none';}
+    else{
+      links.style.display='flex';
+      links.style.position='absolute';
+      links.style.top='100%';links.style.right='0';links.style.left='0';
+      links.style.flexDirection='column';
+      links.style.background='var(--charcoal)';
+      links.style.padding='20px 24px';links.style.gap='18px';
+      links.style.borderBottom='1px solid var(--line)';
+    }
+  });
+</script>
+
+</body>
+</html>
