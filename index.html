@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reel Hauling LLC — Heavy Hauling & Lowboy Transport | Denver, NC</title>
+<title>Reel Hauling INC — Heavy Hauling & Lowboy Transport | Denver, NC</title>
 <meta name="description" content="Family-owned heavy hauling in Denver, NC. Lowboy & dump trailer transport for construction equipment, excavators, forklifts, and oversized loads across the Southeast. Get a free quote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,9 +59,10 @@
   .hero-img{
     position:absolute;inset:0;
     background:
-      linear-gradient(180deg,rgba(15,24,34,.55) 0%,rgba(15,24,34,.40) 40%,rgba(15,24,34,.94) 100%),
-      repeating-linear-gradient(115deg,#13202c 0 60px,#1a2935 60px 120px);
-    display:grid;place-items:center;
+      linear-gradient(180deg,rgba(15,24,34,.55) 0%,rgba(15,24,34,.42) 40%,rgba(15,24,34,.94) 100%),
+      url('hero.jpg');
+    background-size:cover;
+    background-position:center 40%;
   }
   .hero-placeholder{position:absolute;text-align:center;color:rgba(255,255,255,.18);font-family:'Oswald';font-size:1rem;letter-spacing:.1em;border:2px dashed rgba(255,255,255,.15);padding:24px 30px;border-radius:8px}
   .hero-content{position:relative;z-index:2;max-width:760px}
@@ -95,7 +96,7 @@
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   .about p{color:var(--steel);font-size:1.1rem;margin-bottom:18px}
   .about p strong{color:var(--bone)}
-  .about-photo{background:repeating-linear-gradient(115deg,#13202c 0 40px,#1a2935 40px 80px);border-radius:10px;min-height:340px;display:grid;place-items:center;color:rgba(255,255,255,.18);font-family:'Oswald';letter-spacing:.1em;border:2px dashed rgba(255,255,255,.12);text-align:center;padding:20px}
+  .about-photo{background:url('team.jpg');background-size:cover;background-position:center;border-radius:10px;min-height:420px;border:1px solid var(--line)}
 
   /* Services */
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
@@ -109,7 +110,7 @@
   /* Gallery */
   .gallery{background:var(--charcoal)}
   .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
-  .gal-item{aspect-ratio:4/3;background:repeating-linear-gradient(115deg,#13202c 0 30px,#1a2935 30px 60px);border-radius:8px;position:relative;overflow:hidden;display:grid;place-items:end;border:1px solid var(--line)}
+  .gal-item{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:8px;position:relative;overflow:hidden;display:grid;place-items:end;border:1px solid var(--line)}
   .gal-item .cap{width:100%;background:linear-gradient(transparent,rgba(0,0,0,.85));padding:30px 16px 14px;font-family:'Oswald';text-transform:uppercase;font-size:.92rem;letter-spacing:.04em}
   .gal-note{text-align:center;margin-top:28px;color:var(--steel);font-size:.95rem}
 
@@ -166,11 +167,12 @@
 <!-- NAV -->
 <header>
   <nav>
-    <a href="#" class="logo"><span class="mark">R</span>REEL <span>HAULING</span></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Reel Hauling INC" style="height:54px;width:auto;display:block"></a>
     <div class="navlinks">
       <a href="#services">Services</a>
       <a href="#gallery">Past Hauls</a>
       <a href="#about">About</a>
+      <a href="availability.html">Availability</a>
       <a href="#" >FAQ</a>
       <a href="#" >Contact</a>
       <a href="#quote" class="nav-cta"><span>Get a Quote</span></a>
@@ -181,9 +183,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img">
-    <div class="hero-placeholder">[ HERO PHOTO GOES HERE ]<br>Black Kenworth + loaded lowboy</div>
-  </div>
+  <div class="hero-img"></div>
   <div class="wrap">
     <div class="hero-content">
       <span class="eyebrow"><span>Family Owned • Denver, NC</span></span>
@@ -217,12 +217,12 @@
       <div>
         <div class="section-tag">WHO WE ARE</div>
         <h2 class="section-title">A Family Business Built on Hard Work</h2>
-        <p>Reel Hauling LLC is a <strong>family-owned and operated</strong> heavy hauling company out of Denver, North Carolina. We started in 2025 with one goal: move heavy loads safely, on time, and treat every customer like a neighbor.</p>
+        <p>Reel Hauling INC is a <strong>family-owned and operated</strong> heavy hauling company out of Denver, North Carolina. We started in 2025 with one goal: move heavy loads safely, on time, and treat every customer like a neighbor.</p>
         <p>From excavators and bulldozers to forklifts, graders, and oversized loads, we specialize in <strong>lowboy and dump C&amp;D trailer transport</strong>. When you call Reel Hauling, you're talking to the people who actually drive the truck — not a call center.</p>
         <p>We're fully licensed, fully insured, and ready to roll across the Southeast.</p>
         <a href="#" class="btn btn-ghost" style="margin-top:10px">Read Our Story</a>
       </div>
-      <div class="about-photo">[ FAMILY / TRUCK PHOTO ]</div>
+      <div class="about-photo"></div>
     </div>
   </div>
 </section>
@@ -279,14 +279,17 @@
       <p style="color:var(--steel);font-size:1.1rem">A look at what we've moved. Real trucks, real equipment, real work.</p>
     </div>
     <div class="gal-grid">
-      <div class="gal-item"><div class="cap">Sennebogen Material Handler</div></div>
-      <div class="gal-item"><div class="cap">Forklift Transport</div></div>
-      <div class="gal-item"><div class="cap">Bulldozer on Lowboy</div></div>
-      <div class="gal-item"><div class="cap">Dump C&amp;D Trailer</div></div>
-      <div class="gal-item"><div class="cap">Skidder / Forestry Equip.</div></div>
-      <div class="gal-item"><div class="cap">Oversized Wide Load</div></div>
+      <div class="gal-item" style="background-image:url('g-volvo.jpg')"><div class="cap">Volvo EC350 Excavator</div></div>
+      <div class="gal-item" style="background-image:url('g-dozer.jpg')"><div class="cap">Komatsu Dozer</div></div>
+      <div class="gal-item" style="background-image:url('g-screen.jpg')"><div class="cap">John Deere 750 Dozer</div></div>
+      <div class="gal-item" style="background-image:url('g-wheelloader.jpg')"><div class="cap">Komatsu WA320 Loader</div></div>
+      <div class="gal-item" style="background-image:url('g-dump.jpg')"><div class="cap">Articulated Dump Truck</div></div>
+      <div class="gal-item" style="background-image:url('g-jdozer.jpg')"><div class="cap">Motor Grader — Oversized</div></div>
+      <div class="gal-item" style="background-image:url('g-grader.jpg')"><div class="cap">Excavator Transport</div></div>
+      <div class="gal-item" style="background-image:url('g-pipe.jpg')"><div class="cap">Concrete Pipe Haul</div></div>
+      <div class="gal-item" style="background-image:url('g-artic.jpg')"><div class="cap">Pipe &amp; Material Haul</div></div>
     </div>
-    <p class="gal-note">📷 Photos update automatically from the owner's Google Photos album — easy to add new hauls from a phone.</p>
+    <p class="gal-note">A sample of recent hauls across the Southeast. Call us about your load — if it's heavy, we've probably moved one like it.</p>
   </div>
 </section>
 
@@ -318,7 +321,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-logo">REEL <span>HAULING</span> LLC</div>
+        <div class="foot-logo">REEL <span>HAULING</span> INC</div>
         <p>Family-owned heavy hauling &amp; lowboy transport based in Denver, NC. Serving the Southeast, one load at a time.</p>
         <div class="foot-creds">DOT# 4400046 &nbsp;|&nbsp; MC# 1727073</div>
       </div>
@@ -339,7 +342,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      © 2025 Reel Hauling LLC. All rights reserved. &nbsp;•&nbsp; Denver, NC &nbsp;•&nbsp; Family Owned &amp; Operated
+      © 2025 Reel Hauling INC. All rights reserved. &nbsp;•&nbsp; Denver, NC &nbsp;•&nbsp; Family Owned &amp; Operated
     </div>
   </div>
 </footer>

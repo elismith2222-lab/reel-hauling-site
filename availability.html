@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Availability &amp; Booking Calendar | Reel Hauling INC — Denver, NC</title>
+<meta name="description" content="Check Reel Hauling INC's live availability calendar. See open dates and book your heavy haul across the Southeast. Ask about discounted backhaul / return-trip rates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0f1822;
+    --charcoal:#16222e;
+    --charcoal-2:#1d2b39;
+    --amber:#ffc12b;
+    --amber-deep:#e8a200;
+    --steel:#9fb0c0;
+    --bone:#f4f6f8;
+    --line:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--bone);line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.display{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  /* Top bar */
+  .topbar{background:var(--amber);color:var(--black);font-weight:600;font-size:.85rem}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 24px;flex-wrap:wrap;gap:6px;max-width:1100px}
+  .topbar a{font-weight:700}
+  .topbar .creds{letter-spacing:.05em}
+
+  /* Nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(15,24,34,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1100px;margin:0 auto}
+  .logo{font-family:'Oswald';font-weight:700;font-size:1.4rem;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+  .logo .mark{width:34px;height:34px;background:var(--amber);color:var(--black);display:grid;place-items:center;font-weight:700;border-radius:4px;font-size:1.1rem;transform:skewX(-8deg)}
+  .logo span{color:var(--amber)}
+  .navlinks{display:flex;gap:26px;align-items:center;font-family:'Oswald';text-transform:uppercase;font-size:.92rem;letter-spacing:.04em}
+  .navlinks a{color:var(--steel);transition:color .2s}
+  .navlinks a:hover{color:var(--bone)}
+  .navlinks a.active{color:var(--amber)}
+  .nav-cta{background:var(--amber);color:var(--black)!important;padding:10px 18px;border-radius:4px;font-weight:600;transform:skewX(-8deg)}
+  .nav-cta span{display:inline-block;transform:skewX(8deg)}
+  .nav-cta:hover{background:var(--bone)}
+  .menu-btn{display:none;background:none;border:none;color:var(--bone);font-size:1.6rem;cursor:pointer}
+
+  /* Page header */
+  .page-head{padding:60px 0 30px;text-align:center;background:linear-gradient(180deg,var(--charcoal),var(--black))}
+  .page-head .tag{font-family:'Oswald';color:var(--amber);font-weight:600;letter-spacing:.14em;font-size:.9rem;margin-bottom:12px}
+  .page-head h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700}
+  .page-head p{color:var(--steel);font-size:1.1rem;max-width:620px;margin:16px auto 0}
+
+  /* Legend */
+  .legend{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:26px 0 10px}
+  .legend .li{display:flex;align-items:center;gap:9px;font-family:'Oswald';text-transform:uppercase;font-size:.85rem;letter-spacing:.05em;color:var(--steel)}
+  .dot{width:14px;height:14px;border-radius:3px}
+  .dot.busy{background:var(--amber)}
+  .dot.open{background:transparent;border:2px solid var(--steel)}
+
+  /* Calendar wrap */
+  .cal-section{padding:20px 0 70px}
+  .cal-card{background:var(--bone);border-radius:14px;padding:14px;box-shadow:0 20px 50px rgba(0,0,0,.4);max-width:1000px;margin:0 auto}
+  .cal-frame{position:relative;width:100%;padding-top:75%;border-radius:8px;overflow:hidden}
+  .cal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .cal-help{text-align:center;color:var(--steel);font-size:.92rem;margin-top:18px}
+
+  /* Backhaul band */
+  .backhaul{background:linear-gradient(120deg,var(--amber),var(--amber-deep));color:var(--black);text-align:center;padding:50px 24px;margin-top:10px}
+  .backhaul h2{font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:700;margin-bottom:10px}
+  .backhaul p{font-weight:600;font-size:1.05rem;max-width:640px;margin:0 auto 22px}
+  .btn{font-family:'Oswald';text-transform:uppercase;letter-spacing:.04em;font-weight:600;padding:14px 28px;border-radius:4px;font-size:1rem;cursor:pointer;border:none;transition:transform .15s,background .2s;display:inline-flex;align-items:center;gap:10px}
+  .btn-dark{background:var(--black);color:var(--bone)}
+  .btn-dark:hover{background:var(--charcoal);transform:translateY(-2px)}
+
+  /* How it works */
+  .how{padding:70px 0;background:var(--charcoal)}
+  .how h2{text-align:center;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:10px}
+  .how .sub{text-align:center;color:var(--steel);margin-bottom:44px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:var(--black);border:1px solid var(--line);border-radius:10px;padding:30px 24px;text-align:center}
+  .step .num{width:46px;height:46px;background:var(--amber);color:var(--black);font-family:'Oswald';font-weight:700;font-size:1.3rem;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px}
+  .step h3{font-size:1.15rem;margin-bottom:8px;font-weight:600}
+  .step p{color:var(--steel);font-size:.96rem}
+
+  /* Footer */
+  footer{background:#0a121a;padding:54px 0 28px;border-top:1px solid var(--line)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  footer h4{font-family:'Oswald';font-size:1.1rem;letter-spacing:.06em;margin-bottom:16px;color:var(--bone)}
+  footer p,footer a{color:var(--steel);font-size:.95rem;display:block;margin-bottom:8px;transition:color .2s}
+  footer a:hover{color:var(--amber)}
+  .foot-logo{font-family:'Oswald';font-weight:700;font-size:1.5rem;letter-spacing:.06em;margin-bottom:14px}
+  .foot-logo span{color:var(--amber)}
+  .foot-creds{font-family:'Oswald';letter-spacing:.06em;color:var(--steel);font-size:.85rem;margin-top:10px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:22px;text-align:center;color:var(--steel);font-size:.85rem}
+
+  @media(max-width:880px){
+    .navlinks{display:none}
+    .menu-btn{display:block}
+    .steps{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .cal-frame{padding-top:120%}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="creds">DOT# 4400046 &nbsp;|&nbsp; MC# 1727073</span>
+    <span>📞 <a href="tel:+17042016202">(704) 201-6202</a> &nbsp;•&nbsp; <a href="mailto:reelhauling.llc@gmail.com">reelhauling.llc@gmail.com</a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Reel Hauling INC" style="height:54px;width:auto;display:block"></a>
+    <div class="navlinks">
+      <a href="/#services">Services</a>
+      <a href="/#gallery">Past Hauls</a>
+      <a href="/#about">About</a>
+      <a href="availability.html" class="active">Availability</a>
+      <a href="/#quote" class="nav-cta"><span>Get a Quote</span></a>
+    </div>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="tag">LIVE SCHEDULE</div>
+    <h1>Availability &amp; Booking</h1>
+    <p>See what dates are open at a glance. Highlighted days are already booked — everything else is fair game. Found an open date? Request a quote and we'll lock it in.</p>
+    <div class="legend">
+      <div class="li"><span class="dot busy"></span> Booked</div>
+      <div class="li"><span class="dot open"></span> Available</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="cal-section">
+  <div class="wrap">
+    <div class="cal-card">
+      <div class="cal-frame">
+        <iframe src="https://calendar.google.com/calendar/embed?src=reelhauling.llc%40gmail.com&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showPrint=0&showCalendars=0&showTz=0" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+    <p class="cal-help">📅 Calendar updates in real time. Don't see your date open? Call <a href="tel:+17042016202" style="color:var(--amber)">(704) 201-6202</a> — we may still be able to fit you in.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="wrap">
+    <h2>How Booking Works</h2>
+    <p class="sub">Simple, straight-forward, no run-around.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Check the Calendar</h3>
+        <p>Find an open date that works for your haul. Booked dates are highlighted.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Request a Quote</h3>
+        <p>Send us your pickup, drop-off, and load details. We reply within 24 hours.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>We Lock It In</h3>
+        <p>Once confirmed, your date is reserved and we'll be there ready to haul.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">REEL <span>HAULING</span> INC</div>
+        <p>Family-owned heavy hauling &amp; lowboy transport based in Denver, NC. Serving the Southeast, one load at a time.</p>
+        <div class="foot-creds">DOT# 4400046 &nbsp;|&nbsp; MC# 1727073</div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+17042016202">📞 (704) 201-6202</a>
+        <a href="mailto:reelhauling.llc@gmail.com">✉️ reelhauling.llc@gmail.com</a>
+        <p>📍 1949 Beth Haven Ch Rd<br>Denver, NC 28037</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="/#services">Services</a>
+        <a href="/#gallery">Past Hauls</a>
+        <a href="availability.html">Availability</a>
+        <a href="/#quote">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2025 Reel Hauling INC. All rights reserved. &nbsp;•&nbsp; Denver, NC &nbsp;•&nbsp; Family Owned &amp; Operated
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.menu-btn').addEventListener('click',function(){
+    var links=document.querySelector('.navlinks');
+    if(links.style.display==='flex'){links.style.display='none';}
+    else{
+      links.style.display='flex';links.style.position='absolute';
+      links.style.top='100%';links.style.right='0';links.style.left='0';
+      links.style.flexDirection='column';links.style.background='var(--charcoal)';
+      links.style.padding='20px 24px';links.style.gap='18px';
+      links.style.borderBottom='1px solid var(--line)';
+    }
+  });
+</script>
+
+</body>
+</html>
